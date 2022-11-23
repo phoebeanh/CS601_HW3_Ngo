@@ -6,7 +6,7 @@
     }
 }
 
-/*On screens that are 800px or less, set display to block and resize h1*/
+/*Tablets*/
 @media screen and (max-width:800px) {
     div.intro, div.about-content {
         display: block;
@@ -23,8 +23,8 @@
     
 }
 
-/* On screens that are 400px or less, set display to block and resize h1*/
-@media screen and (max-width:400px) {
+/* Mobile*/
+@media screen and (max-width:450px) {
     div.intro, div.about-content {
         display: block;
         overflow: hidden
@@ -49,6 +49,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     
 }
 
@@ -60,14 +61,26 @@ h1 {
     align-self: center;
 }
 
+.splash-header {
+    color: #a18eb4;
+    background: none;
+}
+
 h2, h3 {
     color: #a18eb4;
+}
+
+.splash-left h4 {
+    color: #756486;
+    margin-top: -8px;
 }
 
 header {
     padding: 4px;
     max-height: 50px;
     background: #a18eb4;
+    position: sticky;
+    top:0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -114,10 +127,18 @@ main, footer, nav {
     margin: 8px;
 }
 
+main {
+    flex: 1 1 0;
+    flex-wrap: wrap;
+}
+
 footer {
+    flex: 0 0 content;
     display: flex;
     justify-content: flex-end;
     font-style: italic;
+    bottom: 0;
+    right: 0;
 }
 
 .profile-img {
@@ -128,30 +149,48 @@ footer {
 
 .about-img {
     border-radius: 50%;
+    margin-right: 4em;
     min-width: 250px;
     max-width: 250px;
     max-height: 270px;
 }
 
-.intro {
+.about-content {
     padding: 8px;
     display: flex;
     flex-flow: row;
 }
 
-.about-content {
-    padding: 8px;
+.splash-left {
+    width: 50%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-wrap .overlay {
+.splash-left .splash-header {
+    font-size: 84px;
+    margin-bottom: 0;
+}
+
+.splash-right {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     width: 50%;
     opacity: 1;
-    background: #c2abd8;
+    background: #a18eb4;
     z-index: -1;
+}
+
+.splash-right .splash-photo {
+    position: absolute;
+    right: 25%;
+    bottom: 0;
+    width: 50%;
+    z-index: 1;
 }
 
 
